@@ -1,0 +1,16 @@
+" basic
+set nu rnu
+set showmode
+set timeoutlen=500
+" clipboard
+set clipboard+=unnamedplus
+set clipboard=unnamedplus
+
+" ideavim autoconfig
+set clipboard+=ideaput
+
+""""" KEY BINDINGS """""
+let mapleader=" "
+inoremap jk <Esc>
+nnoremap <leader>w :w<CR>
+
