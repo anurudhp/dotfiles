@@ -1,0 +1,58 @@
+{
+    "window.zoomLevel": 0,
+    "window.menuBarVisibility": "default",
+    "editor.minimap.enabled": false,
+    "git.confirmSync": false,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        ".*": true,
+        "**/*.olean": true
+    },
+    "breadcrumbs.enabled": false,
+    "editor.renderWhitespace": "trailing",
+    "workbench.activityBar.visible": false,
+    "workbench.sideBar.location": "left",
+    "workbench.colorTheme": "Visual Studio Dark",
+    "workbench.statusBar.visible": true,
+    "lean.infoViewFilterIndex": -1,
+    "lean.progressMessages": true,
+    "lean.memoryLimit": 5096,
+    "editor.fontSize": 14,
+    "editor.formatOnPaste": true,
+    "editor.multiCursorModifier": "alt",
+    "editor.snippetSuggestions": "top",
+    "editor.tabSize": 2,
+    "task.problemMatchers.neverPrompt": {
+        "shell": true
+    },
+    "editor.fontFamily": "'DejaVu Sans Mono', 'Droid Sans Mono'",
+
+    "vim.hlsearch": true,
+    "vim.useSystemClipboard": true,
+    "editor.lineNumbers": "relative",
+    "vim.debug.silent": true,
+    "vim.timeout": 500,
+    "vim.leader": "<space>",
+    "vim.insertModeKeyBindingsNonRecursive": [
+        {
+            "before": ["j", "k"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<leader>", "w"],
+            "after": [":", "w", "<CR>"]
+        }
+    ],
+    "vim.statusBarColorControl": true,
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#005f5f",
+        "statusBar.noFolderBackground": "#005f5f",
+        "statusBar.debuggingBackground": "#005f5f"
+    }
+}
