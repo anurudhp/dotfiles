@@ -1,0 +1,47 @@
+{
+  "languageserver": {
+    "clangd": {
+      "command": "clangd-11",
+      "rootPatterns": [
+        "compile_flags.txt",
+        "compile_commands.json"
+      ],
+      "filetypes": [
+        "c",
+        "cc",
+        "cpp",
+        "c++",
+        "objc",
+        "objcpp"
+      ]
+    },
+    "haskell": {
+      "command": "haskell-language-server-wrapper",
+      "args": [
+        "--lsp"
+      ],
+      "rootPatterns": [
+        "*.cabal",
+        "cabal.config",
+        "cabal.project",
+        "package.yaml",
+        "stack.yaml"
+      ],
+      "filetypes": [
+        "haskell",
+        "lhaskell"
+      ],
+      "settings": {
+        "formatter": "ormolu"
+      }
+    },
+    "digestif": { // latex
+      "command": "digestif",
+      "filetypes": [
+        "tex",
+        "plaintex",
+        "context"
+      ]
+    }
+  }
+}
