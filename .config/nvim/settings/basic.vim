@@ -72,13 +72,11 @@ if has('nvim')
   tnoremap <Esc> <C-\><C-n>
 endif
 
-""" TAB in general mode will move to text buffer
-nnoremap <TAB> :bnext<CR>
-""" SHIFT-TAB will go back
-nnoremap <S-TAB> :bprevious<CR>
+""" buffer control
+nnoremap <leader>] :bnext<CR>
+nnoremap <leader>[ :bprevious<CR>
+nnoremap <leader>\ :bdelete<CR>
 
-
-""" force better practices
 
 """ disable arrow keys in insert mode
 inoremap <up> <nop>

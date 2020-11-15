@@ -5,7 +5,7 @@ let g:fzf_buffers_jump = 1
 let g:fzf_preview_window = ['right:50%', 'ctrl-/']
 let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline'
 
-nnoremap <C-p> :Files<CR>
+nnoremap <leader>. :Files<CR>
 nnoremap <M-f> :BLines<CR>
 nnoremap <M-S-f> :Lines<CR>
 
