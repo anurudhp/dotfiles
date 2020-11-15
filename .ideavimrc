@@ -1,16 +1,32 @@
-" basic
-set nu rnu
-set showmode
+""""" basic """""
+set nu rnu showmode
 set timeoutlen=500
-" clipboard
 set clipboard+=unnamedplus
 set clipboard=unnamedplus
-
-" ideavim autoconfig
 set clipboard+=ideaput
+let mapleader=" "
+let maplocalleader=","
 
 """"" KEY BINDINGS """""
-let mapleader=" "
+" basic
 inoremap jk <Esc>
 nnoremap <leader>w :w<CR>
+nnoremap <leader>f :action ReformatCode<CR>
+nnoremap <leader>. :action GotoFile<CR>
 
+" build and run
+nnoremap <leader>b :action CMake.CompileCurrentFile<CR>
+nnoremap <leader>x :action Run<CR>
+nnoremap <leader>X :action ChooseRunConfiguration<CR>
+nnoremap <leader>d :action Debug<CR>
+nnoremap <leader>D :action ChooseDebugConfiguration<CR>
+
+" debugger
+nnoremap ,b :action ToggleLineBreakpoint<CR>
+nnoremap ,p :action ViewBreakpoints<CR>
+nnoremap ,, :action Resume<CR>
+nnoremap ,n :action StepOver<CR>
+nnoremap ,i :action StepInto<CR>
+nnoremap ,o :action StepOut<CR>
+nnoremap ,e :action EvaluateExpression<CR>
+nnoremap ,s :action Stop<CR>
