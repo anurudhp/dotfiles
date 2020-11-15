@@ -19,13 +19,13 @@
 ;;
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
-(setq doom-font (font-spec :family "DejaVu Sans Mono" :size 18)
+(setq doom-font (font-spec :family "Droid Sans Mono Slashed for Powerline" :size 16)
       doom-variable-pitch-font (font-spec :family "sans" :size 14))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-monokai-classic)
+(setq doom-theme 'spacemacs-dark)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -34,7 +34,6 @@
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type 'relative)
-
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
@@ -52,3 +51,19 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+;;; Custom Keybindings ;;;
+
+;; Move between buffers
+(map! :leader :desc "Go to previous buffer" "[" 'previous-buffer
+      :leader :desc "Go to previous buffer" "]" 'next-buffer)
+
+;; Proof General
+(map! :map 'coq-mode-map
+      :leader :desc "Coq next line" "j" 'proof-assert-next-command-interactive
+      :leader :desc "Coq undo line" "k" 'proof-undo-last-successful-command
+      :leader :desc "Coq goto point" "l" 'proof-goto-point)
+(map! :map 'coq-mode-map
+      :i "M-j" 'proof-assert-next-command-interactive
+      :i "M-k" 'proof-undo-last-successful-command
+      :i "M-l" 'proof-goto-point)
