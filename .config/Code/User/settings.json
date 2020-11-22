@@ -18,10 +18,7 @@
     "workbench.sideBar.location": "left",
     "workbench.colorTheme": "Visual Studio Dark",
     "workbench.statusBar.visible": true,
-    "lean.infoViewFilterIndex": -1,
-    "lean.progressMessages": true,
-    "lean.memoryLimit": 5096,
-    "editor.fontSize": 14,
+    "editor.fontSize": 16,
     "editor.formatOnPaste": true,
     "editor.multiCursorModifier": "alt",
     "editor.snippetSuggestions": "top",
@@ -51,8 +48,8 @@
     ],
     "vim.statusBarColorControl": true,
     "workbench.colorCustomizations": {
-        "statusBar.background": "#005f5f",
-        "statusBar.noFolderBackground": "#005f5f",
-        "statusBar.debuggingBackground": "#005f5f"
+        "statusBar.background": "#5f00af",
+        "statusBar.noFolderBackground": "#5f00af",
+        "statusBar.debuggingBackground": "#5f00af"
     }
 }

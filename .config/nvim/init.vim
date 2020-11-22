@@ -18,7 +18,7 @@ Plug 'vim-airline/vim-airline-themes'
 " Language server client
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Linting engine
-Plug 'dense-analysis/ale'
+Plug 'dense-analysis/ale', { 'for': 'haskell' }
 
 " fzf: fuzzy finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
