@@ -10,9 +10,19 @@ let maplocalleader=","
 """"" KEY BINDINGS """""
 " basic
 inoremap jk <Esc>
-nnoremap <leader>w :w<CR>
-nnoremap <leader>f :action ReformatCode<CR>
+nnoremap <leader>w :action ReformatCode<CR>:w<CR>
 nnoremap <leader>. :action GotoFile<CR>
+
+" windows
+nnoremap <C-s> <C-w>s
+nnoremap <C-v> <C-w>v
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" edit
+nnoremap <leader>rn :action RenameElement<CR>
 
 " build and run
 nnoremap <leader>b :action CMake.CompileCurrentFile<CR>
@@ -21,7 +31,7 @@ nnoremap <leader>X :action ChooseRunConfiguration<CR>
 nnoremap <leader>d :action Debug<CR>
 nnoremap <leader>D :action ChooseDebugConfiguration<CR>
 
-" debugger
+" debug
 nnoremap ,b :action ToggleLineBreakpoint<CR>
 nnoremap ,p :action ViewBreakpoints<CR>
 nnoremap ,, :action Resume<CR>
