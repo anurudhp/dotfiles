@@ -59,6 +59,9 @@ function tp() {
   \cd $(dirs -v | fzf --reverse --filepath-word --cycle --tiebreak index | cut -d$'\t' -f 2 | sed "s#~#$HOME#")
 }
 
+export CC=clang
+export CXX=clang++
+
 alias ls='ls --color=auto'
 alias rm='rm -i'
 alias touchscreen-enable="xinput enable 'ELAN Touchscreen'"

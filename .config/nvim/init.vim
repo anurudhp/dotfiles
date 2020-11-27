@@ -9,10 +9,18 @@ Plug 'liuchengxu/space-vim-dark'
 " Plug 'NLKNguyen/papercolor-theme'
 " Plug 'arcticicestudio/nord-vim'
 " Plug 'sonph/onehalf', { 'rtp': 'vim' }
+" Plug 'sickill/vim-monokai'
+" Plug 'crusoexia/vim-monokai'
+" Plug 'blueshirts/darcula'
+" Plug 'doums/darcula'
+" Plug 'dracula/vim', { 'as': 'dracula' }
+" Plug 'relastle/bluewery.vim'
+Plug 'tomasiser/vim-code-dark'
 
 """"" Airline Status Bar """""
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+" Plug 'itchyny/lightline.vim'
 
 """"" LSPs and Files """""
 " Language server client
@@ -31,7 +39,7 @@ Plug 'airblade/vim-rooter'
 Plug 'preservim/nerdtree'
 
 " git integration
-Plug 'tpope/vim-fugitive'
+" Plug 'tpope/vim-fugitive'
 
 " Comment support
 Plug 'tpope/vim-commentary'

@@ -1,15 +1,15 @@
 """"" Theme Configuration """""
 """""""""""""""""""""""""""""""
 set t_Co=256
+set termguicolors
 
 " FOR: liuchengxu/space-vim-dark
-colorscheme space-vim-dark
-hi Comment cterm=italic guifg=#5C6370 ctermfg=59
-set termguicolors
+" colorscheme space-vim-dark
+" set background=dark
+" hi Comment cterm=italic guifg=#5C6370 ctermfg=59
 
 " FOR: NLKNguyen/papercolor-theme
 " colorscheme PaperColor
-" set background=dark
 " set background=light
 
 " FOR: arcticicestudio/nord-vim
@@ -17,6 +17,12 @@ set termguicolors
 
 " FOR: sonph/onehalf
 " colorscheme onehalflight
+" set background=light
+
+" FOR: tomasiser/vim-code-dark
+colorscheme codedark
+set background=dark
+" hi Comment cterm=italic guifg=#5C6370 ctermfg=59
 
 """"" Airline """""
 """""""""""""""""""
@@ -38,5 +44,7 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 " show folder name on the top right
 " note: vim-rooter takes care of making it the project folder
 let g:airline#extensions#tabline#buffers_label = 'buffers | ' . fnamemodify(getcwd(), ':t')
-" let g:airline#extensions#tabline#tabs_label = 'tabs'
+let g:airline#extensions#tabline#tabs_label = 'tabs'
 
+let g:airline_left_sep=''
+let g:airline_right_sep=''
