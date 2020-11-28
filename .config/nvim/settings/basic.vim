@@ -38,6 +38,10 @@ set clipboard=unnamedplus
 """ allow vim to auto-reload files
 set autoread
 
+""" use syntax based folds
+set foldmethod=syntax
+set foldlevelstart=99
+
 """ Key Bindings """
 """ use space as leader
 let mapleader=" "

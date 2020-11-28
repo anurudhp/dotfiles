@@ -4,7 +4,8 @@
 #promptinit
 #prompt adam1
 #PROMPT="(%K%B%n@%m%k) %b%F{green}[%126<...<%~]"$'\n'"%}%F{white} %# %b%f%k"
-PROMPT="(%B%n@%m) %b%F{green}[%126<...<%~]"$'\n'"%}%F{white} %# %b%f%k"
+
+PROMPT="%B(%n@%m)%b %F{green}[%126<...<%~]"$'\n'"%}%F{white} %# %b%f%k"
 
 setopt histignorealldups sharehistory
 
@@ -58,6 +59,25 @@ export EDITOR=nvim
 function tp() {
   \cd $(dirs -v | fzf --reverse --filepath-word --cycle --tiebreak index | cut -d$'\t' -f 2 | sed "s#~#$HOME#")
 }
+
+export FZF_DEFAULT_OPTS="--cycle --ansi --reverse"
+
+# FZF for ctrl-R
+uniq_history() {
+  history 0 | sort -b -k 2 | tac | uniq -f 1 | sort -nk 1 | sed 's/\\\\n/\\\\\\n/g'
+}
+fzf_history_search() {
+  local IFS=' '
+  result=$(uniq_history | sed 's/^ *[0-9]* *//' | fzf -i --ansi --height 40% --reverse --inline-info +s +m -x --tac -e -q "$BUFFER")
+  #  --prompt "$(print -nP $PROMPT)"
+  if [[ -n $result ]]; then
+    BUFFER=$(print -P $result)
+  fi
+  zle reset-prompt
+  zle end-of-line
+}
+zle -N fzf_history_search
+bindkey '^r' fzf_history_search
 
 export CC=clang
 export CXX=clang++

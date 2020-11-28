@@ -26,7 +26,7 @@ set background=dark
 
 """"" Airline """""
 """""""""""""""""""
-let g:airline_theme='dark'
+let g:airline_theme='onedark'
 let g:airline_powerline_fonts = 1 " use powerline fonts
 
 set noshowmode " Don't show mode explicitly, Airline tab shows it anyway
