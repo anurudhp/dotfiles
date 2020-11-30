@@ -1,28 +1,31 @@
-# Set up the prompt
+### Set up the prompt
 
-#autoload -Uz promptinit
-#promptinit
-#prompt adam1
-#PROMPT="(%K%B%n@%m%k) %b%F{green}[%126<...<%~]"$'\n'"%}%F{white} %# %b%f%k"
+function mkPrompt() {
+  if [ ! -z "$PWDGITBRANCHNAME" ] ; then
+    local gitbrnameval=" ($PWDGITBRANCHNAME)"
+  fi
 
-PROMPT="%B(%n@%m)%b %F{green}[%126<...<%~]"$'\n'"%}%F{white} %# %b%f%k"
+  PROMPT="%B(%n@%m)%b %F{green}[%126<...<%~]%F{blue}"$gitbrnameval$'\n'"%}%F{white} %# %b%f%k"
+}
+mkPrompt
 
 setopt histignorealldups sharehistory
 
-# Use emacs keybindings even if our EDITOR is set to vi
+### Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
 
-# Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
+### Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.zsh_history
 
-# Use modern completion system
+### Use modern completion system
 autoload -Uz compinit
 compinit
 
-setopt autocd autopushd pushdignoredups
-# better tab completion
+# setopt autocd
+setopt autopushd pushdignoredups
+### better tab completion
 source ~/.local/share/fzf-tab/fzf-tab.plugin.zsh
 
 zstyle ':completion:*' auto-description 'specify: %d'
@@ -47,22 +50,43 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 #               Custom configuration                           #
 ################################################################
 
-# Enable Ctrl-x-e to edit command line
+function set_tab_name() {
+  name=$(pwd | sed "s#$HOME#~#g")
+  echo -ne "\033];Terminal - $name\007"
+}
+
+# show branch in prompt
+function set_git_branch_name() {
+  PWDGITBRANCHNAME=$(git branch 2>/dev/null | grep '*' | cut -d' ' -f2 || echo "")
+}
+set_tab_name
+
+# add hooks
+chpwd() {
+  set_tab_name
+}
+
+precmd() {
+  set_git_branch_name
+  mkPrompt
+}
+
+### Enable Ctrl-x-e to edit command line
 autoload -U edit-command-line
-# Emacs style
+### Emacs style
 zle -N edit-command-line
 bindkey '^xe' edit-command-line
 bindkey '^x^e' edit-command-line
 export EDITOR=nvim
 
-# teleport between recent folders
+### teleport between recent folders
 function tp() {
   \cd $(dirs -v | fzf --reverse --filepath-word --cycle --tiebreak index | cut -d$'\t' -f 2 | sed "s#~#$HOME#")
 }
 
 export FZF_DEFAULT_OPTS="--cycle --ansi --reverse"
 
-# FZF for ctrl-R
+### FZF for ctrl-R
 uniq_history() {
   history 0 | sort -b -k 2 | tac | uniq -f 1 | sort -nk 1 | sed 's/\\\\n/\\\\\\n/g'
 }
