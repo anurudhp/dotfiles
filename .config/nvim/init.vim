@@ -8,10 +8,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 """"" Themes """""
 " Plug 'liuchengxu/space-vim-dark'
 " Plug 'NLKNguyen/papercolor-theme'
-" Plug 'arcticicestudio/nord-vim'
-" Plug 'sonph/onehalf', { 'rtp': 'vim' }
 " Plug 'crusoexia/vim-monokai'
-" Plug 'blueshirts/darcula'
+" Plug 'morhetz/gruvbox'
 Plug 'tomasiser/vim-code-dark'
 
 """"" Airline Status Bar """""
@@ -45,20 +43,18 @@ Plug 'tpope/vim-commentary'
 Plug 'jiangmiao/auto-pairs', { 'for': 'cpp' }
 
 """ multiple cursors (experimental)
-" Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 """"" Language specific support """""
 """ Haskell
 Plug 'neovimhaskell/haskell-vim', { 'for': ['haskell', 'lhaskell'] }
 Plug 'alx741/vim-hindent', { 'for': ['haskell', 'lhaskell'] }
 
-" Lisp
+""" Lisp
 Plug 'eraserhd/parinfer-rust', { 'for': ['lisp', 'scheme', 'clojure'] }
 Plug 'Olical/conjure', {'tag': 'v4.8.0'}
 
 """" Extra """"
-""" Hard mode. Disables most normal "other editor" features.
-""" Use with caution
 " Plug 'wikitopian/hardmode'
 
 call plug#end()
@@ -80,18 +76,10 @@ set termguicolors
 " colorscheme PaperColor
 " set background=light
 
-" FOR: arcticicestudio/nord-vim
-" colorscheme nord
-
-" FOR: sonph/onehalf
-" colorscheme onehalflight
-" set background=light
-
 " FOR: tomasiser/vim-code-dark
 colorscheme codedark
 set background=dark
 hi Comment cterm=italic guifg=#5C6370 ctermfg=59
-
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""" Airline """""""""""""""""""""""""""""""""""""""""""""""""""
