@@ -1,14 +1,5 @@
 ### Set up the prompt
 
-function mkPrompt() {
-  if [ ! -z "$PWDGITBRANCHNAME" ] ; then
-    local gitbrnameval=" ($PWDGITBRANCHNAME)"
-  fi
-
-  PROMPT="%B(%n@%m)%b %F{green}[%126<...<%~]%F{blue}"$gitbrnameval$'\n'"%}%F{white} %# %b%f%k"
-}
-mkPrompt
-
 setopt histignorealldups sharehistory
 
 ### Use emacs keybindings even if our EDITOR is set to vi
@@ -50,26 +41,50 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 #               Custom configuration                           #
 ################################################################
 
+### Save and retrieve directory history.
+# while read -r line; do
+#   pushd -q "$line" 2> /dev/null > /dev/null
+# done < ~/.local/share/zsh/cd_history
+zshexit() {
+  dirs -lv | awk -F '\t' '{print $2}' | tac > ~/.local/share/zsh/cd_history
+}
+
+### Display Tab Name
 function set_tab_name() {
   name=$(pwd | sed "s#$HOME#~#g")
   echo -ne "\033];Terminal - $name\007"
 }
-
-# show branch in prompt
-function set_git_branch_name() {
-  PWDGITBRANCHNAME=$(git branch 2>/dev/null | grep '*' | cut -d' ' -f2 || echo "")
-}
 set_tab_name
 
-# add hooks
+### Prompt Configuration
+### show branch in prompt
+function get_git_branch_name() {
+  local brname=$(git branch 2>/dev/null | grep '*' | cut -d' ' -f2 || echo "")
+  if [ ! -z "$brname" ]; then
+    echo " ($brname)"
+  fi
+}
+function get_py_venv_name() {
+  local venv_name=$(basename $VIRTUAL_ENV 2>/dev/null)
+  if [ ! -z "$venv_name" ]; then
+    echo " {{$venv_name}}"
+  fi
+}
+
+function mkPrompt() {
+  PROMPT="%B(%n@%m)%b %F{green}[%126<...<%~]%F{blue}"$(get_git_branch_name)"%F{red}"$(get_py_venv_name)$'\n'"%}%F{white} %# %b%f%k"
+}
+mkPrompt
+
+### Register hooks
 chpwd() {
   set_tab_name
 }
 
 precmd() {
-  set_git_branch_name
   mkPrompt
 }
+
 
 ### Enable Ctrl-x-e to edit command line
 autoload -U edit-command-line
@@ -114,6 +129,8 @@ alias mypy3="source $HOME/Documents/coding/python3env/bin/activate"
 alias gpp='g++-8 -std=c++17 -O2 -DLOCAL_EXEC -Wall -g -fsanitize=address,undefined'
 alias fd=fdfind
 alias dotfiles="git --git-dir=$HOME/Documents/misc/dotfiles --work-tree=$HOME"
+alias vi=nvim
+alias vim=nvim
 
 PATH=$PATH:/usr/local/go/bin
 PATH=$PATH:/home/linuxbrew/.linuxbrew/bin
@@ -123,3 +140,5 @@ PATH="$HOME/.elan/bin:$PATH"
 PATH="$HOME/.cargo/bin:$PATH"
 PATH=$PATH:$HOME/.emacs.d/bin
 
+### Starship prompt
+#eval "$(starship init zsh)"

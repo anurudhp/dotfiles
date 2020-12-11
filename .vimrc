@@ -1,5 +1,5 @@
-set t_Co=256
-set termguicolors
+" set t_Co=256
+" set termguicolors
 colorscheme elflord
 set laststatus=2
 

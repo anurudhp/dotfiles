@@ -116,6 +116,8 @@ bindsym $mod+7 workspace $wsname7
 bindsym $mod+8 workspace $wsname8
 bindsym $mod+9 workspace $wsname9
 bindsym $mod+0 workspace $wsname10
+# bindsym $mod+[ workspace prev
+# bindsym $mod+] workspace next
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $wsname1
@@ -130,7 +132,7 @@ bindsym $mod+Shift+9 move container to workspace $wsname9
 bindsym $mod+Shift+0 move container to workspace $wsname10
 
 # multiple screens
-bindsym $mod+p move workspace to output left
+bindsym $mod+p move workspace to output up
 
 # reload the configuration file
 bindsym $mod+Shift+c reload

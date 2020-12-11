@@ -18,7 +18,7 @@
     "workbench.sideBar.location": "left",
     "workbench.colorTheme": "Visual Studio Dark",
     "workbench.statusBar.visible": true,
-    "editor.fontSize": 16,
+    "editor.fontSize": 18,
     "editor.formatOnPaste": true,
     "editor.multiCursorModifier": "alt",
     "editor.snippetSuggestions": "top",

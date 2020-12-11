@@ -1,0 +1,9 @@
+add_newline = false
+
+format = """
+$username $hostname  $directory
+$character
+"""
+
+[package]
+disabled = true

@@ -133,6 +133,8 @@ set colorcolumn=80
 set cursorline
 " explicitly display tabs and trailing spaces
 set list listchars=tab:»-,trail:▶,nbsp:▶
+" allow cursor to move everywhere
+set virtualedit=all
 
 """ key trigger timeout
 set timeoutlen=500 " By default timeoutlen is 1000 ms
@@ -158,6 +160,7 @@ set foldlevelstart=99
 """""""""""""""""""" Keybindings """""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader=" "
+let maplocalleader="m"
 """ don't move on hitting just space
 noremap <leader> <nop>
 inoremap <silent> jk <Esc>
