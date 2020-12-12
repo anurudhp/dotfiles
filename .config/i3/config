@@ -132,7 +132,7 @@ bindsym $mod+Shift+9 move container to workspace $wsname9
 bindsym $mod+Shift+0 move container to workspace $wsname10
 
 # multiple screens
-bindsym $mod+p move workspace to output up
+bindsym $mod+p move workspace to output left
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -188,7 +188,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
 
 # lock-screen
-bindsym $mod+Down exec i3lock -i ~/Pictures/Wallpapers/i3lock.png
+bindsym $mod+Down exec i3lock -t -i ~/Pictures/Wallpapers/i3lock.png
 
 # network-manager widget
 # exec --no-startup-id nm-applet

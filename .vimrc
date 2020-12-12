@@ -1,6 +1,6 @@
 " set t_Co=256
 " set termguicolors
-colorscheme elflord
+" colorscheme elflord
 set laststatus=2
 
 " change cursor shape in insert and rename modes
