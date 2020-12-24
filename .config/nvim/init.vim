@@ -9,7 +9,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 " Plug 'liuchengxu/space-vim-dark'
 " Plug 'NLKNguyen/papercolor-theme'
 " Plug 'crusoexia/vim-monokai'
-" Plug 'morhetz/gruvbox'
+Plug 'morhetz/gruvbox'
 Plug 'tomasiser/vim-code-dark'
 
 """"" Airline Status Bar """""
@@ -53,6 +53,9 @@ Plug 'alx741/vim-hindent', { 'for': ['haskell', 'lhaskell'] }
 """ Lisp
 Plug 'eraserhd/parinfer-rust', { 'for': ['lisp', 'scheme', 'clojure'] }
 Plug 'Olical/conjure', {'tag': 'v4.8.0'}
+
+""" Org Mode
+" Plug 'jceb/vim-orgmode'
 
 """" Extra """"
 " Plug 'wikitopian/hardmode'
@@ -105,6 +108,8 @@ let g:airline#extensions#tabline#buffers_label = 'buffers | ' . fnamemodify(getc
 let g:airline#extensions#tabline#tabs_label = 'tabs'
 
 let g:airline_left_sep=''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
 let g:airline_right_sep=''
 let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#tabline#left_alt_sep = ''
@@ -125,8 +130,8 @@ set tabstop=2 softtabstop=0 expandtab shiftwidth=2 smarttab
 set smartindent autoindent
 
 """ line numbers and cursor
-" relative line numbers, with current line number
-set number relativenumber
+" line numbers
+set number
 " draw a vertical line at 80 chars
 set colorcolumn=80
 " Enable highlighting of the current line
@@ -143,7 +148,7 @@ set timeoutlen=500 " By default timeoutlen is 1000 ms
 set shell=/usr/bin/zsh
 
 """ enable mouse!
-" set mouse=a
+set mouse=a
 
 """ use system clipboard
 set clipboard+=unnamedplus

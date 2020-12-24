@@ -1,5 +1,5 @@
 """"" basic """""
-set nu rnu showmode
+set nu showmode
 set timeoutlen=500
 set clipboard+=unnamedplus
 set clipboard=unnamedplus
@@ -29,6 +29,7 @@ nnoremap ]g :action GotoNextError<CR>
 
 """ build and run
 nnoremap <leader>b :action CMake.CompileCurrentFile<CR>
+nnoremap <leader>B :action Build<CR>
 nnoremap <leader>x :action Run<CR>
 nnoremap <leader>X :action ChooseRunConfiguration<CR>
 nnoremap <leader>d :action Debug<CR>
