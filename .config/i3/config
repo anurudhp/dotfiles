@@ -100,7 +100,7 @@ set $wsname3 3:coding
 set $wsname4 4:browse
 set $wsname5 5:chill
 set $wsname6 6:contest
-set $wsname7 7:coding
+set $wsname7 7:browse
 set $wsname8 8:work
 set $wsname9 9:gaming
 set $wsname10 10:misc
@@ -188,7 +188,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
 
 # lock-screen
-bindsym $mod+Down exec i3lock -t -i ~/Pictures/Wallpapers/i3lock.png
+bindsym $mod+Down exec $(i3lock -t -i ~/Pictures/Wallpapers/i3lock.png && sleep 5 && xset dpms force off)
 
 # network-manager widget
 # exec --no-startup-id nm-applet
@@ -198,7 +198,7 @@ exec --no-startup-id ~/.config/i3/i3-battery-popup/i3-battery-popup -n
 
 # screenshots
 # bindsym Print exec scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f ~/Pictures/'
-bindsym Control+Print exec gnome-screenshot -i
+bindsym Print exec gnome-screenshot -i
 # bindsym Shift+Print exec gnome-screenshot -a
 
 # gnome keyring startup

@@ -1,4 +1,5 @@
 filetype plugin indent on
+set exrc
 
 let g:ale_disable_lsp = 1
 
@@ -28,7 +29,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 """ `cd`s to project root based on config (like .git/)
-Plug 'airblade/vim-rooter'
+" Plug 'airblade/vim-rooter'
 
 """ tree viewer
 Plug 'preservim/nerdtree'
