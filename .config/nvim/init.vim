@@ -6,6 +6,9 @@ let g:ale_disable_lsp = 1
 """ vim-plug: https://github.com/junegunn/vim-plug
 call plug#begin('~/.local/share/nvim/plugged')
 
+""" More sensible defaults
+Plug 'tpope/vim-sensible'
+
 """"" Themes """""
 " Plug 'liuchengxu/space-vim-dark'
 " Plug 'NLKNguyen/papercolor-theme'
@@ -34,11 +37,16 @@ Plug 'junegunn/fzf.vim'
 """ tree viewer
 Plug 'preservim/nerdtree'
 
+""" save workspaces
+Plug 'tpope/vim-obsession'
+
 """ git integration
 " Plug 'tpope/vim-fugitive'
 
 """ Comment support
 Plug 'tpope/vim-commentary'
+""" Surround
+Plug 'tpope/vim-surround'
 
 """ Automatic bracket matching
 Plug 'jiangmiao/auto-pairs', { 'for': 'cpp' }
@@ -146,7 +154,7 @@ set virtualedit=all
 set timeoutlen=500 " By default timeoutlen is 1000 ms
 
 """ default shell to run commands in
-set shell=/usr/bin/zsh
+set shell=/usr/bin/fish
 
 """ enable mouse!
 set mouse=a
