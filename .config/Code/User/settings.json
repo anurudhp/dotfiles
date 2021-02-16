@@ -1,5 +1,4 @@
 {
-    "window.zoomLevel": 0,
     "window.menuBarVisibility": "default",
     "editor.minimap.enabled": false,
     "git.confirmSync": false,
@@ -47,9 +46,17 @@
         }
     ],
     "vim.statusBarColorControl": true,
+    "vim.statusBarColors.visual": "#827717",
+    "vim.statusBarColors.visualblock": "#827717",
+    "vim.statusBarColors.visualline": "#b55d02",
+    "vim.statusBarColors.replace": "#6f1fR5",
+    "vim.statusBarColors.insert": "#01579B",
+    "vim.statusBarColors.normal": "#004D40",
     "workbench.colorCustomizations": {
-        "statusBar.background": "#005f5f",
-        "statusBar.noFolderBackground": "#005f5f",
-        "statusBar.debuggingBackground": "#005f5f"
-    }
+        "statusBar.background": "#004D40",
+        "statusBar.noFolderBackground": "#004D40",
+        "statusBar.debuggingBackground": "#004D40"
+    },
+    "latex-workshop.message.update.show": false,
+    "latex-workshop.view.pdf.viewer": "tab"
 }

@@ -8,10 +8,10 @@ fish_vi_key_bindings
 set fish_greeting
 
 ### Environment variables
-set EDITOR nvim
-set CC clang
-set CXX clang++
-set FZF_DEFAULT_OPTS "--cycle --ansi --reverse"
+set -x CC clang
+set -x CXX clang++
+set -x EDITOR nvim
+set -x FZF_DEFAULT_OPTS "--cycle --ansi --reverse"
 
 ### Path
 set PATH "$PATH:/usr/local/go/bin"
@@ -23,31 +23,33 @@ set PATH "$PATH:$HOME/.emacs.d/bin"
 [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
 
 ### Aliases
+function rm
+  command rm -i $argv
+end
+
+## use neovim
 function vi
   command nvim $argv
 end
 function vim
   command nvim $argv
 end
-# Load session
+## Load session (usually used with `:Obsess .vs` to create the session)
 function code
-  command nvim -S $argv
-end
-
-function ls
-  command ls --color=auto $argv
-end
-
-function rm
-  command rm -i $argv
-end
-
-function touchscreen-enable
-  xinput enable 'ELAN Touchscreen'
+  command nvim -S .vs $argv
 end
 
 function touchscreen-disable
   xinput disable 'ELAN Touchscreen'
+end
+function touchscreen-enable
+  xinput enable 'ELAN Touchscreen'
+end
+function keyboard-disable
+  xinput set-int-prop (xinput --list | grep "AT Translated Set 2 keyboard" | sed 's/[^=]*=\([1-9]*\).*/\1/') "Device Enabled" 8 0
+end
+function keyboard-enable
+  xinput set-int-prop (xinput --list | grep "AT Translated Set 2 keyboard" | sed 's/[^=]*=\([1-9]*\).*/\1/') "Device Enabled" 8 1
 end
 
 function mypy3
@@ -63,4 +65,9 @@ end
 function dotfiles
   git --git-dir=$HOME/Documents/misc/dotfiles --work-tree=$HOME $argv
 end
+
+function vscode
+  command code $argv
+end
+
 

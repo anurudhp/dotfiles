@@ -351,3 +351,8 @@ nnoremap <right> <nop>
 """ default on buffer open
 " autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 
+""" Neovide
+let g:neovide_cursor_animation_length=0.13
+let g:neovide_cursor_trail_length=100
+let g:neovide_cursor_vfx_mode = "ripple"
+let g:neovide_cursor_animate_in_insert_mode=0
