@@ -2,26 +2,26 @@ export XDG_DATA_DIRS="$HOME/.local/share/:$XDG_DATA_DIRS"
 
 if [ "$XDG_CURRENT_DESKTOP" = "i3" ] ; then
   # background image process
-  ~/.fehbg &
+  # ~/.fehbg &
 
   # network-manager applet, shows in status bar
   nm-applet &
 
   # source OPAM environment variables
   # - OPAM used to install Coq
-  eval $(opam env)
+  # eval $(opam env)
 
   # Compositing window manager
   # - fixes scroll getting stuck in Sublime, Firefox etc.
-  xcompmgr &
+  # xcompmgr &
 
   # start Redshift: manages blue light filters based on timezone
-  redshift &
+  # redshift &
 
   # multi-screen setup using xrandr
-  ~/.screenlayout/default-twoscreen.sh
+  # ~/.screenlayout/default-twoscreen.sh
 
   # BUG: Ubuntu 20.04 Intel driver not modesetting
   # https://bugs.launchpad.net/ubuntu/+source/mesa/+bug/1877879
-  export MESA_LOADER_DRIVER_OVERRIDE=i965
+  # export MESA_LOADER_DRIVER_OVERRIDE=i965
 fi

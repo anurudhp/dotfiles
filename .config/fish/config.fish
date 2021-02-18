@@ -53,7 +53,7 @@ function keyboard-enable
 end
 
 function mypy3
-  source "$HOME/Documents/coding/python3env/bin/activate.fish"
+  source "$HOME/sources/python3env/bin/activate.fish"
 end
 
 function gpp
@@ -63,7 +63,7 @@ function fd
   fdfind $argv
 end
 function dotfiles
-  git --git-dir=$HOME/Documents/misc/dotfiles --work-tree=$HOME $argv
+  git --git-dir=$HOME/sources/dotfiles --work-tree=$HOME $argv
 end
 
 function vscode

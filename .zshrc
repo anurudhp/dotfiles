@@ -17,7 +17,7 @@ compinit
 # setopt autocd
 setopt autopushd pushdignoredups
 ### better tab completion
-source ~/.local/share/fzf-tab/fzf-tab.plugin.zsh
+# source ~/.local/share/fzf-tab/fzf-tab.plugin.zsh
 
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
