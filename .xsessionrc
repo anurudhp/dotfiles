@@ -2,7 +2,7 @@ export XDG_DATA_DIRS="$HOME/.local/share/:$XDG_DATA_DIRS"
 
 if [ "$XDG_CURRENT_DESKTOP" = "i3" ] ; then
   # background image process
-  # ~/.fehbg &
+  ~/.fehbg &
 
   # network-manager applet, shows in status bar
   nm-applet &
@@ -19,7 +19,7 @@ if [ "$XDG_CURRENT_DESKTOP" = "i3" ] ; then
   # redshift &
 
   # multi-screen setup using xrandr
-  # ~/.screenlayout/default-twoscreen.sh
+  ~/.screenlayout/default-two-screen.sh
 
   # BUG: Ubuntu 20.04 Intel driver not modesetting
   # https://bugs.launchpad.net/ubuntu/+source/mesa/+bug/1877879

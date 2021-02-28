@@ -20,6 +20,7 @@ set PATH "$HOME/.cabal/bin:$PATH"
 set PATH "$HOME/.elan/bin:$PATH"
 set PATH "$HOME/.cargo/bin:$PATH"
 set PATH "$PATH:$HOME/.emacs.d/bin"
+set PATH "$PATH:$HOME/.local/share/gem/ruby/2.7.0/bin"
 [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
 
 ### Aliases
@@ -57,7 +58,7 @@ function mypy3
 end
 
 function gpp
-  g++-8 -std=c++17 -O2 -DLOCAL_EXEC -Wall -g -fsanitize=address,undefined $argv
+  g++ -std=c++17 -O2 -DLOCAL_EXEC -Wall -g -fsanitize=address,undefined $argv
 end
 function fd
   fdfind $argv
