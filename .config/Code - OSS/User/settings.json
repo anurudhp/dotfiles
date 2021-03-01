@@ -1,0 +1,29 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/*.olean": true
+    },
+    "editor.minimap.enabled": false,
+    "window.zoomLevel": 1,
+    "vim.hlsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.debug.silent": true,
+    "vim.timeout": 500,
+    "vim.leader": "<space>",
+    "vim.insertModeKeyBindingsNonRecursive": [
+        {
+            "before": ["j", "k"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<leader>", "w"],
+            "after": [":", "w", "<CR>"]
+        }
+    ]
+}
