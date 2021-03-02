@@ -191,7 +191,8 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
 
 # lock-screen
-bindsym $mod+p exec $(i3lock -t -i ~/Pictures/Wallpapers/i3lock.png && sleep 5 && xset dpms force off)
+# bindsym $mod+p exec $(i3lock -t -i ~/Pictures/Wallpapers/i3lock.png && sleep 5 && xset dpms force off)
+bindsym $mod+p exec --no-startup-id light-locker-command -l
 
 # network-manager widget
 # exec --no-startup-id nm-applet

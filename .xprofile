@@ -1,0 +1,11 @@
+export TERMINAL=gnome-terminal
+export EDITOR=vim
+
+nm-applet &
+
+[ -f ~/.screenlayout/default-two-screen.sh ] && . ~/.screenlayout/default-two-screen.sh
+
+# background-image process
+[ -f ~/.fehbg ] && ~/.fehbg &
+
+light-locker --lock-on-lid &
